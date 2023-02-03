@@ -1,0 +1,58 @@
+@font-face {
+  font-family: spacemono-regular;
+  src: url(../public/SpaceMono-Regular.ttf);
+}
+@font-face {
+  font-family: spacemono-bold;
+  src: url(../public/SpaceMono-Bold.ttf);
+}
+@font-face {
+  font-family: monument-regular;
+  src: url(../public/MonumentExtended-Regular.otf);
+}
+@font-face {
+  font-family: marvinvisions-bold;
+  src: url(../public/MarvinVisions-Bold.otf);
+}
+
+:root {
+  --main-font: "spacemono-regular", sans-serif;
+  --main-font-bold: "spacemono-bold", sans-serif;
+  --sub-font: "monument-regular", sans-serif;
+  --label-font: "marvinvisions-bold", sans-serif;
+  --primary-color: #140c50;
+  --secondary-color: #1d1571;
+  --color-body-text: #b2beff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--primary-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.5px;
+}
+#main-container {
+  width: 100%;
+  height: 100%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
