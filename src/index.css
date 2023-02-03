@@ -1,18 +1,22 @@
 @font-face {
   font-family: spacemono-regular;
   src: url(../public/SpaceMono-Regular.ttf);
+  font-display: block;
 }
 @font-face {
   font-family: spacemono-bold;
   src: url(../public/SpaceMono-Bold.ttf);
+  font-display: block;
 }
 @font-face {
   font-family: monument-regular;
   src: url(../public/MonumentExtended-Regular.otf);
+  font-display: block;
 }
 @font-face {
   font-family: marvinvisions-bold;
   src: url(../public/MarvinVisions-Bold.otf);
+  font-display: block;
 }
 
 :root {
