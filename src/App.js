@@ -4,29 +4,43 @@ import { Routes, Route } from "react-router-dom";
 const Navigation = lazy(() =>
   import("./routes/navigation/navigation.component")
 );
+const Home = lazy(() => import("./pages/home/home.component"));
 
-// "Initiating system. Please wait."
-// "Bringing AI online. Standby."
-// "Initializing. This won't take long."
-// "Getting AI ready. Hang tight."
-// "Warming up AI engines. One moment."
-// "Starting up AI process. Please wait."
+const randomLoaderTexts = [
+  "Warming up AI engines. One moment.",
+  "Initiating system. Please wait.",
+  "Bringing AI online. Standby.",
+  "Initializing. This won't take long.",
+  "Getting AI ready. Hang tight.",
+  "Starting up AI process. Please wait.",
+];
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const circleLoader = document.getElementById("preloader");
+  const randomIndex = Math.floor(Math.random() * randomLoaderTexts.length);
+  const randomLoaderText = randomLoaderTexts[randomIndex];
+
+  const textElement = document.getElementById("rnd-loader-text");
+  if (textElement) {
+    textElement.innerHTML = randomLoaderText;
+  }
+
   if (circleLoader) {
     setTimeout(() => {
       circleLoader.style.display = "none";
       setLoading(false);
     }, 6000);
   }
+
   return (
     !loading && (
       <Fragment>
         <Suspense>
           <Routes>
-            <Route path="/" element={<Navigation />}></Route>
+            <Route path="/" element={<Navigation />}>
+              <Route index element={<Home />} />
+            </Route>
           </Routes>
         </Suspense>
       </Fragment>

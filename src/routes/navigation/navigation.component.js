@@ -1,14 +1,18 @@
 import { Fragment, memo } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import "./navigation.styles.css";
 
 const Navigation = () => {
   return (
     <Fragment>
-      <div>
-        <h1 className="logo">Nesh</h1>
+      <div className="bg">
+        <div className="logo-container">
+          <Link to="/" className="logo">
+            Nesh
+          </Link>
+        </div>
+        <Outlet />
       </div>
-      <Outlet />
     </Fragment>
   );
 };
