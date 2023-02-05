@@ -5,8 +5,8 @@ import "./navigation.styles.css";
 
 const Navigation = (props) => {
   const audioRef = useRef();
-  const audio = props.audio;
-  const isPlaying = !audio.paused;
+  // const audio = props.audio;
+  // const isPlaying = !audio.paused;
 
   const handleMouseEnter = () => {
     audioRef.current.play();
@@ -22,7 +22,7 @@ const Navigation = (props) => {
             </Link>
             <audio preload="auto" ref={audioRef} src={BtnAudio}></audio>
           </span>
-          <div
+          {/* <div
             className="spectrum"
             onMouseEnter={handleMouseEnter}
             onClick={props.handleClick}
@@ -33,7 +33,7 @@ const Navigation = (props) => {
               <i></i>
               <i></i>
             </div>
-          </div>
+          </div> */}
         </div>
         <Outlet />
       </div>

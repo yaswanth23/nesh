@@ -25,17 +25,17 @@ const App = () => {
     textElement.innerHTML = randomLoaderText;
   }
 
-  const [paused, setPaused] = useState(false);
-  const audio = document.getElementById("audio-bg");
+  // const [paused, setPaused] = useState(false);
+  // const audio = document.getElementById("audio-bg");
 
-  const handleClick = () => {
-    if (paused) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
-    setPaused(!paused);
-  };
+  // const handleClick = () => {
+  //   if (paused) {
+  //     audio.play();
+  //   } else {
+  //     audio.pause();
+  //   }
+  //   setPaused(!paused);
+  // };
 
   if (circleLoader) {
     setTimeout(() => {
@@ -49,10 +49,7 @@ const App = () => {
       <Fragment>
         <Suspense>
           <Routes>
-            <Route
-              path="/"
-              element={<Navigation audio={audio} handleClick={handleClick} />}
-            >
+            <Route path="/" element={<Navigation />}>
               <Route index element={<Home />} />
             </Route>
           </Routes>
