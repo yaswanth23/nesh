@@ -20,11 +20,22 @@ const App = () => {
   const circleLoader = document.getElementById("preloader");
   const randomIndex = Math.floor(Math.random() * randomLoaderTexts.length);
   const randomLoaderText = randomLoaderTexts[randomIndex];
-
   const textElement = document.getElementById("rnd-loader-text");
   if (textElement) {
     textElement.innerHTML = randomLoaderText;
   }
+
+  const [paused, setPaused] = useState(false);
+  const audio = document.getElementById("audio-bg");
+
+  const handleClick = () => {
+    if (paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    setPaused(!paused);
+  };
 
   if (circleLoader) {
     setTimeout(() => {
@@ -38,7 +49,10 @@ const App = () => {
       <Fragment>
         <Suspense>
           <Routes>
-            <Route path="/" element={<Navigation />}>
+            <Route
+              path="/"
+              element={<Navigation audio={audio} handleClick={handleClick} />}
+            >
               <Route index element={<Home />} />
             </Route>
           </Routes>
