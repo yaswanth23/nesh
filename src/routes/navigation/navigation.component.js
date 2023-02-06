@@ -6,7 +6,7 @@ import "./navigation.styles.css";
 const Navigation = (props) => {
   const audioRef = useRef();
   const audio = props.audio;
-  let isPlaying = !audio.paused;
+  const isPlaying = !audio.paused;
 
   const handleMouseEnter = () => {
     audioRef.current.play();
