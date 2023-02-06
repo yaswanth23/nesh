@@ -30,9 +30,9 @@ const App = () => {
 
   const handleClick = () => {
     if (paused) {
-      audio.paused();
-    } else {
       audio.play();
+    } else {
+      audio.pause();
     }
     setPaused(!paused);
   };
