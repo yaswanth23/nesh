@@ -30,7 +30,7 @@ const App = () => {
 
   const handleClick = () => {
     if (paused) {
-      audio.pause();
+      audio.paused();
     } else {
       audio.play();
     }
