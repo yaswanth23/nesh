@@ -24,6 +24,7 @@
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preload" as="audio" href="./ai_bg.mp3" type="audio/mpeg" />
     <link
       rel="preload"
       as="font"
@@ -52,7 +53,6 @@
       type="font/otf"
       crossorigin
     />
-    <link rel="preload" as="audio" href="./ai_bg.mp3" type="audio/mpeg" />
     <title>Nesh</title>
     <style>
       .glow-loader {
@@ -131,9 +131,9 @@
     </style>
   </head>
   <body>
-    <!-- <audio id="audio-bg" loop autoplay>
+    <audio id="audio-bg" loop autoplay>
       <source src="%PUBLIC_URL%/ai_bg.mp3" type="audio/mpeg" />
-    </audio> -->
+    </audio>
     <div id="preloader">
       <div class="glow-loader">
         <div class="loader"></div>
